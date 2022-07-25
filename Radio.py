@@ -40,11 +40,23 @@ cors = CORS(app, resources={r"/foo": {"origins": "http://localhost:port"}})
 #@app.route("/PlayBackWeb", methods=['POST','OPTIONS'])
 #@cross_origin(origin='localhost',headers=['Content- Type','Authorization'])
 
+radio_session = requests.Session()
+encoding = 'latin1'
+info = ''
 
 
 Plaer=True
 
 def radioParseDef():
+    global Plaer
+    print("Start radioParseDef")
+    while Plaer:
+      if str(NewPlaerVLC.get_state())=="State.Playing":
+       radioParseInfo()
+       time.sleep(5)
+      else:time.sleep(10)
+       
+def radioParseInfo():
     global StreamUrlPlayNow
     global titleTrekPlayNow
     global artistTrekPlayNow
@@ -52,17 +64,12 @@ def radioParseDef():
     global msmp_streamIcon
     global version
     global NewPlaerVLC
-    global discord
     global Num
     global radioList
-    print("Start radioParseDef")
-    radio_session = requests.Session()
-    encoding = 'latin1'
-    info = ''
-    while Plaer:
-      if str(NewPlaerVLC.get_state())=="State.Playing":
-       time.sleep(2)   
-       try:
+    global radio_session
+    global encoding
+    global info
+    try:
         radio = radio_session.get(radioList[Num], headers={'Icy-MetaData': '1'}, stream=True)
     
         metaint = int(radio.headers['icy-metaint'])
@@ -104,8 +111,8 @@ def radioParseDef():
                     artistTrekPlayNow=""
                     print('No StreamTitle!')
     
-       except:print(traceback.format_exc());time.sleep(10)
-      else:time.sleep(10)
+    except:print(traceback.format_exc());time.sleep(10)
+      
 
 radioParsePotoc = Thread(target=radioParseDef)
 radioParsePotoc.setDaemon(True)
@@ -156,6 +163,7 @@ def home():
           else:ItsPlay=False
           if(command=="play"):
                NewPlaerVLC.play()
+               radioParseInfo()
           elif(command=="stop"):
                NewPlaerVLC.stop()
           elif(command=="previous"):
@@ -167,6 +175,7 @@ def home():
                NewPlaerVLC.set_media(media)
                if(ItsPlay):
                     NewPlaerVLC.play()
+                    radioParseInfo()
                else:
                     NewPlaerVLC.stop()
           elif(command=="next"):
@@ -178,6 +187,7 @@ def home():
                NewPlaerVLC.set_media(media)
                if(ItsPlay):
                     NewPlaerVLC.play()
+                    radioParseInfo()
                else:
                     NewPlaerVLC.stop()
           return render_template('home.html',titleTrekPlayNow=titleTrekPlayNow,artistTrekPlayNow=artistTrekPlayNow)
