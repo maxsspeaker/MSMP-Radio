@@ -1,5 +1,7 @@
 requests
 flask
-python-vlc
+flask_cors 
 flask-sock
+python-vlc
+
 
