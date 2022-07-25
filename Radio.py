@@ -1,6 +1,7 @@
 from flask import Flask,send_file,request,jsonify,render_template,redirect,url_for,session
 from flask import cli
 from flask_cors import CORS,cross_origin
+from flask_sock import Sock
 import vlc
 import requests
 from threading import Thread
@@ -31,7 +32,12 @@ NewPlaerVLC.set_media(media)
 
 #MediaPlayer.play()
 
+
+
 app = Flask("MSMP Radio")
+sock = Sock(app)
+
+app.config['SOCK_SERVER_OPTIONS'] = {'ping_interval': 25}
 app.config['SECRET_KEY'] = 'firksfirksMyaBox'
 app.config['CORS_HEADERS'] = 'Content-Type'
 cors = CORS(app, resources={r"/foo": {"origins": "http://localhost:port"}})
