@@ -143,16 +143,43 @@ def logout():
 
 @app.route('/RadioBox', methods=['GET'])
 def home():
+     global Num
+     global radioList
      global titleTrekPlayNow
      global artistTrekPlayNow
      global StreamUrlPlayNow
+     global media
      if(session.get("logged_in")==True):
           try:command = request.args['cm'] 
           except:command=None
+          if str(NewPlaerVLC.get_state())=="State.Playing":ItsPlay=True
+          else:ItsPlay=False
           if(command=="play"):
                NewPlaerVLC.play()
-          if(command=="stop"):
+          elif(command=="stop"):
                NewPlaerVLC.stop()
+          elif(command=="previous"):
+               Num=Num-1
+               if(Num<0):
+                    Num=len(radioList)-1
+               print(Num)
+               media = vlc_instance.media_new(radioList[Num])
+               NewPlaerVLC.set_media(media)
+               if(ItsPlay):
+                    NewPlaerVLC.play()
+               else:
+                    NewPlaerVLC.stop()
+          elif(command=="next"):
+               Num=Num+1
+               if(Num>len(radioList)-1):
+                    Num=0
+               print(Num)
+               media = vlc_instance.media_new(radioList[Num])
+               NewPlaerVLC.set_media(media)
+               if(ItsPlay):
+                    NewPlaerVLC.play()
+               else:
+                    NewPlaerVLC.stop()
           return render_template('home.html',titleTrekPlayNow=titleTrekPlayNow,artistTrekPlayNow=artistTrekPlayNow)
 
      else:

@@ -1,1 +1,2 @@
 http://play.lofiradio.ru:8000/mp3_320
+http://stream2.datacenter.by:8006/radiusfm_main
