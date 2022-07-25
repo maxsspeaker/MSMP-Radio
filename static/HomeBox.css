@@ -1,0 +1,182 @@
+body {
+	background: url(MSMP_RadioBG.png);
+	background-size: cover !important;
+    background-attachment: fixed !important;
+    background-position: center;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 35px;
+    line-height: 1.42857143;
+    color: #333;
+
+}
+
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.1;
+    color: #fff;
+}
+h1, .h1, h2, .h2, h3, .h3 {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.logo h1{
+    font-size: 80px;
+}
+.container {
+    top: 10%;
+    left: 10%;
+    
+    
+    line-height: 1;
+    margin-right: auto;
+    margin-left: auto;
+    width: auto;
+    background-color: rgba(89, 89, 89,0.5);
+}
+.logo{
+    padding-top: 4%;
+    text-align: center ;
+}
+
+.itemsMenu {
+    padding-left: 10%;
+    padding-bottom: 5%;
+}
+.itemsMenuPlayer{
+    display: flex;
+}
+
+.buttonMediaPlayer {
+    border: none;
+    padding: 25px 35px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 50px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 2px;
+    background-color: rgb(200, 0, 0);
+    color: white;
+}
+
+p {
+    
+}
+.itemsInfoPlayer p{
+    font-size: 35px;
+    margin-block-start: 0.5em;
+    margin-block-end: 0.5em;
+    color: #979797;
+}
+.itemsInfoPlayer h1{
+    font-size: 50px;
+    margin-block-start: 0.1em;
+    margin-block-end: 0.1em;
+}
+
+@media (min-width: 992px){
+
+h1, .h1, h2, .h2, h3, .h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.itemsInfoPlayer p{
+    font-size: 20px;
+}
+.itemsInfoPlayer h1{
+    font-size: 25px;
+}
+
+.buttonMediaPlayer {
+    border: none;
+    padding: 10px 15px;
+    font-size: 20px;
+}
+
+body {
+    font-size: 15px;
+    /* width: 970px; */
+}
+.container {
+    top: 50%;
+    left: 50%;
+    
+    width: 50em;
+    line-height: 1;
+}
+.logo h1{font-size: 45px;}
+
+.logo{
+    font-size: 15px;
+}
+
+.itemsMenu {
+    padding-left: 10%;
+    padding-bottom: 5%;
+}
+
+}
+
+html{
+
+}
+
+p{
+    color: #fff
+
+}
+
+
+@media (min-width: 992px)
+.container {
+    /* width: 970px; */
+}
+
+.btn {
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    border-radius: 0px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    color: #fff;
+    background-color: #404040;
+    border-color: #3a3a3a;
+}
+.btn-default {
+    color: #fff;
+    background-color: #404040;
+    border-color: #3a3a3a;
+}
+input, button, select, textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    color: #fff;
+    background-color: #404040;
+    border-color: #3a3a3a;
+}
+input::placeholder{
+  color: #9b9b9b;
+}
+.error{
+	color: #fff;
+}
+

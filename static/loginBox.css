@@ -1,0 +1,99 @@
+body {
+	background: url(/static/MSMP_RadioBG.png);
+	background-size: cover !important;
+    background-attachment: fixed !important;
+    background-position: center;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 15px;
+    line-height: 1.42857143;
+    color: #333;
+
+}
+html{
+
+}
+
+.container {
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 20%;
+    padding-right: 15px;
+    background-color: rgba(89, 89, 89,0.5);
+}
+
+@media (min-width: 992px){
+.container {
+    top: 10%;
+    left: 10%;
+    
+    
+    line-height: 1;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 10%;
+    padding-right: 10%;
+    width: 50em;
+    background-color: rgba(89, 89, 89,0.5);
+
+}
+
+}
+
+@media (min-width: 992px)
+.container {
+    /* width: 970px; */
+}
+h1, .h1 {
+    font-size: 36px;
+}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.1;
+    color: #fff;
+}
+h1, .h1, h2, .h2, h3, .h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.btn {
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    border-radius: 0px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    color: #fff;
+    background-color: #404040;
+    border-color: #3a3a3a;
+}
+.btn-default {
+    color: #fff;
+    background-color: #404040;
+    border-color: #3a3a3a;
+}
+input, button, select, textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    color: #fff;
+    background-color: #404040;
+    border-color: #3a3a3a;
+}
+input::placeholder{
+  color: #9b9b9b;
+}
+.error{
+	color: #fff;
+}
